@@ -1,0 +1,13 @@
+FINANCE IA PRO - APK PELO GITHUB
+
+1. Crie um repositorio NOVO no GitHub (por exemplo FINANCE-IA-PRO-ANDROID).
+2. Extraia este ZIP e envie TODO o conteudo diretamente na raiz do repositorio, incluindo a pasta oculta .github/workflows.
+3. No GitHub, abra Actions > Gerar APK Finance IA Pro > Run workflow > Run workflow.
+4. Aguarde o job compilar ficar verde; abra a execucao e baixe o artefato Finance-IA-Pro-Android-APK.
+5. Extraia o ZIP do artefato: dentro estara app-debug.apk, instalavel no Android.
+
+O APK e uma compilacao DEBUG, assinada automaticamente com chave de desenvolvimento; adequada para testes, nao para publicar na Play Store.
+A aplicacao abre o site Finance IA Pro na WebView e precisa de internet.
+O fechamento com confirmacao e feito pelo codigo Android ao apertar Voltar na tela inicial.
+O codigo foi preparado para compilar, mas a compilacao nao foi executada neste ambiente. Caso o GitHub reporte erro, envie o log para ajuste.
+Nao substitua o repositorio FINANCES do site por este projeto Android.
