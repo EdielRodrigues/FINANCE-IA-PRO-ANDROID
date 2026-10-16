@@ -1,0 +1,7 @@
+Finance IA Pro Android 10.4.3
+
+Novidades: intercepta relatórios PDF/CSV gerados pelo site como links blob, salva em Downloads/Finance IA Pro (Android 10+) e permite compartilhar pelo WhatsApp ou outro app. Mantém atualização por gesto, câmera, login e confirmação de saída.
+
+Instalação: enviar os arquivos do projeto para a raiz do repositório FINANCE-IA-PRO-ANDROID e executar Actions > Gerar APK Finance IA Pro > Run workflow. Baixar artifact Finance-IA-Pro-Android-APK.
+
+Observação: o PDF é gerado pelo site FINANCES v10.4.2. No Android 7-9, o arquivo é salvo na pasta privada do aplicativo, sem compartilhamento direto.
