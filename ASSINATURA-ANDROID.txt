@@ -1,0 +1,22 @@
+FINANCE IA PRO v10.4.4 - ATUALIZACOES SEM DESINSTALAR
+
+IMPORTANTE: o Android so atualiza um APK instalado se o applicationId, a assinatura digital e o versionCode forem compativeis. O projeto manteve br.com.financeiapro e elevou versionCode para 1044.
+
+O APK antigo foi assinado com uma chave de debug temporaria do GitHub Actions. Uma chave nova de producao nao pode atualizar diretamente esse APK antigo: sera necessario UMA ULTIMA DESINSTALACAO ao migrar para a assinatura permanente. Antes disso, confirme que os dados importantes estao no Firebase, exporte o backup JSON e nao desinstale enquanto houver dados so no aparelho.
+
+A partir de agora use SEMPRE a MESMA chave de assinatura e incremente versionCode a cada nova versao. Guarde a chave e as senhas fora do repositorio publico.
+
+1. Gere uma chave privada com keytool (Java):
+   keytool -genkeypair -v -keystore finance-release.jks -alias financeiapro -keyalg RSA -keysize 3072 -validity 10000
+2. Converta o arquivo JKS para base64 em seu computador (Linux/macOS):
+   base64 -w0 finance-release.jks
+   (Windows PowerShell: [Convert]::ToBase64String([IO.File]::ReadAllBytes('finance-release.jks')))
+3. No GitHub, abra Settings > Secrets and variables > Actions > New repository secret.
+   FINANCE_KEYSTORE_BASE64 = texto base64 da chave
+   FINANCE_STORE_PASSWORD = senha do arquivo JKS
+   FINANCE_KEY_ALIAS = financeiapro
+   FINANCE_KEY_PASSWORD = senha da chave
+4. Execute Actions > Gerar APK Finance IA Pro > Run workflow e baixe o APK release.
+5. Para a proxima atualizacao, conserve os mesmos 4 secrets e aumente versionCode.
+
+Nao envie JKS ou senhas no chat nem coloque no GitHub como arquivo publico.
