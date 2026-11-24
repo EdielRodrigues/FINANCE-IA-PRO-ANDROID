@@ -103,6 +103,12 @@ public class MainActivity extends Activity {
    @Override public boolean shouldOverrideUrlLoading(WebView v,WebResourceRequest request){
     Uri uri=request.getUrl();String host=uri.getHost();
     if(host!=null && (host.equals("edielrodrigues.github.io") || host.equals("accounts.google.com"))){return false;}
+    if("intent".equals(uri.getScheme())){
+     try{Intent target=Intent.parseUri(uri.toString(),Intent.URI_INTENT_SCHEME);
+      if(!"com.whatsapp.w4b".equals(target.getPackage()) || target.getData()==null || !"whatsapp".equals(target.getData().getScheme()))return true;
+      Intent safe=new Intent(Intent.ACTION_VIEW,target.getData());safe.setPackage("com.whatsapp.w4b");startActivity(safe);
+     }catch(Exception ex){Toast.makeText(MainActivity.this,"WhatsApp Business indisponível",Toast.LENGTH_LONG).show();}return true;
+    }
     try{startActivity(new Intent(Intent.ACTION_VIEW,uri));}catch(Exception ignored){}return true;
    }
    @Override public void onPageFinished(WebView v,String url){
